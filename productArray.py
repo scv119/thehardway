@@ -27,6 +27,7 @@ class Solution(object):
         return result
 
     def productExceptSelf2(self, nums):
+        #use O(n) time and O(1) space
         length = len(nums)
         begin = end = 1
         result = [1] * length
