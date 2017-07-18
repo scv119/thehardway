@@ -26,6 +26,19 @@ class Solution(object):
                 result.append(fromBegin[i-1] * fromEnd[length - i -2])
         return result
 
+    def productExceptSelf2(self, nums):
+        length = len(nums)
+        begin = end = 1
+        result = [1] * length
+        for i in range(0, length):
+            result[i] = result[i] * begin
+            begin = begin * nums[i]
+            result[length - i -1] = result[length - i - 1] *end
+            end = end * nums[length - i -1]
+        return result
+
 a =Solution()
 testList = [0, 4, 7, 9, 10]
 print a.productExceptSelf(testList)
+print a.productExceptSelf2(testList)
+
