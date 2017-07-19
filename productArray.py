@@ -23,7 +23,7 @@ class Solution(object):
             elif i == length - 1:
                 result.append(from_begin[length - 2])
             else:
-                result.append(from_begin[i-1] * from_end[length - i -2])
+                result.append(from_begin[i - 1] * from_end[length - i - 2])
         return result
 
     def productExceptSelf2(self, nums):

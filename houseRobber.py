@@ -32,7 +32,7 @@ class Solution(object):
             return nums[0]
         elif length == 2:
             return max(nums[0], nums[1])
-        return max(self.rob2(nums[0:length-2]) + nums[length-1], self.rob2(nums[0:length-3])+ nums[length-2])
+        return max(self.rob2(nums[0:length - 2]) + nums[length - 1], self.rob2(nums[0:length - 3])+ nums[length - 2])
 
     # solution: choose last house or not compare last house + max(0 to n -3 house) and max(0 to n -2) house
     # f(n) = max(f(n-2) + nums[n], f(n-1))
@@ -45,7 +45,7 @@ class Solution(object):
             return nums[0]
         elif length == 2:
             return max(nums[0], nums[1])
-        return max(self.rob3(nums[0:length-2]) + nums[length-1], self.rob3(nums[0:length-1]))
+        return max(self.rob3(nums[0:length - 2]) + nums[length - 1], self.rob3(nums[0:length - 1]))
 
 solution = Solution()
 testList = [183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211]
