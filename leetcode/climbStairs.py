@@ -27,10 +27,21 @@ class Solution(object):
             return 1
         return self.climbStairs2(n - 1) + self.climbStairs2(n - 2)
 
+    def climbStairs3(self, n):
+        # time complexity O(n) and space complexity O(1)
+        prev = cur = 1
+        for i in xrange(2, n + 1):
+            temp = cur
+            cur = prev + cur
+            prev = temp
+        return cur
+
 solution = Solution()
 print "solution1"
 for i in xrange(0, 60):
     print solution.climbStairs(i)
+for i in xrange(0, 60):
+    print solution.climbStairs3(i)
 print "solution2"
 for i in xrange(0, 60):
     print solution.climbStairs2(i)
