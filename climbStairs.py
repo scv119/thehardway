@@ -9,7 +9,7 @@ class Solution(object):
         # f(n) = f(n -1) + f(n-2)
         # use a list to memorize previous solution
         result = [1, 1]
-        for i in range(2, n + 1):
+        for i in xrange(2, n + 1):
             result.append(result[i - 2] + result[i - 1])
         return result[n]
 
@@ -27,8 +27,8 @@ class Solution(object):
 
 solution = Solution()
 print "solution1"
-for i in range(0, 60):
+for i in xrange(0, 60):
     print solution.climbStairs(i)
 print "solution2"
-for i in range(0, 60):
+for i in xrange(0, 60):
     print solution.climbStairs2(i)

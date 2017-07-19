@@ -12,12 +12,12 @@ class Solution(object):
         result_begin = result_end = 1
         # use fromBegin list to store nums[0] * ... * nums[i]
         # use fromEnd list to store nums[n] * nums[n-1] *... * nums[n - i - 1]
-        for i in range(0, length):
+        for i in xrange(0, length):
             result_begin = result_begin * nums[i]
             from_begin.append(result_begin)
             result_end = result_end * nums[length - i - 1]
             from_end.append(result_end)
-        for i in range(0, length):
+        for i in xrange(0, length):
             if i == 0:
                 result.append(from_end[length - 2])
             elif i == length - 1:
@@ -31,7 +31,7 @@ class Solution(object):
         length = len(nums)
         begin = end = 1
         result = [1] * length
-        for i in range(0, length):
+        for i in xrange(0, length):
             result[i] = result[i] * begin
             begin = begin * nums[i]
             result[length - i -1] = result[length - i - 1] *end

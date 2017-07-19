@@ -1,5 +1,5 @@
 class Solution(object):
-    #solution learned from discussion
+    # solution learned from discussion
     def rob(self, nums):
         """
         : type nums: list[int]
@@ -14,7 +14,7 @@ class Solution(object):
         length = len(nums)
         # f(n) = max(f(n-2) + nums[n], f(n-1))
         # either choose last number or not
-        for i in range(0, length):
+        for i in xrange(0, length):
             temp = cur_max
             cur_max = max(pre_max + nums[i], cur_max)
             pre_max = temp
