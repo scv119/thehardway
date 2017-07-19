@@ -10,7 +10,7 @@ class Solution(object):
         # use a list to memorize previous solution
         result = [1, 1]
         for i in range(2, n+1):
-            result.append(result[i-2]+result[i-1])
+            result.append(result[i - 2] + result[i - 1])
         return result[n]
 
     def climbStairs2(self, n):
@@ -23,7 +23,7 @@ class Solution(object):
             return 1
         elif n == 1:
             return 1
-        return self.climbStairs2(n-1) + self.climbStairs2(n-2)
+        return self.climbStairs2(n - 1) + self.climbStairs2(n - 2)
 
 solution = Solution()
 print "solution1"
