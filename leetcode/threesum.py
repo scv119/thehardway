@@ -16,10 +16,10 @@ class Solution(object):
             l = i + 1
             r = len(nums) - 1
             while l < r:
-                tempSum = nums[i] + nums[l] + nums[r]
-                if tempSum < 0:
+                temp_sum = nums[i] + nums[l] + nums[r]
+                if temp_sum < 0:
                     l = l + 1
-                elif tempSum > 0:
+                elif temp_sum > 0:
                     r = r - 1
                 else:
                     result.append([nums[i], nums[l], nums[r]])
