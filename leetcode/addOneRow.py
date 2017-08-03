@@ -37,3 +37,21 @@ class Solution(object):
             i.right = TreeNode(v)
             i.right.right = temp_right
         return root
+
+    def addOneRow2(self, root, v, d):
+        # time O(n) space O(1)
+        if d == 0 or d == 1:
+            new_root = TreeNode(v)
+            if d == 1:
+                new_root.left = root
+            elif d == 0:
+                new_root.right = root
+            return new_root
+        if d > 1 and root != None:
+            if d > 2:
+                root.left = self.addOneRow2(root.left, v, d - 1)
+                root.right = self.addOneRow2(root.right, v, d - 1)
+            elif d == 2:
+                root.left = self.addOneRow2(root.left, v, 1)
+                root.right = self.addOneRow2(root.right, v, 0)
+        return root
