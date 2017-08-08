@@ -6,10 +6,6 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b45e09dc636b1fae85f50037f2377fc937c83bdb
 class Solution(object):
     def preorderTraversal(self, root):
         """
