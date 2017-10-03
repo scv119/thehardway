@@ -8,22 +8,22 @@ def swapPairs(self, head):
     # time: O(n), space: O(1)
     if head == None or head.next == None:
         return head
-    res = pre = ListNode(0)
-    res.next = head
-    pair1 = head
-    pair2 = head.next
-    while pair1 != None and pair2 != None:
-        tempNext = pair2.next
-        pre.next = pair2
-        pair2.next = pair1
-        pair1.next = tempNext
-        pre = pair1
-        if pair1.next == None:
+    sentry = pre = ListNode(0)
+    sentry.next = head
+    first = head
+    second = head.next
+    while first != None and second != None:
+        tempNext = second.next
+        pre.next = second
+        second.next = first
+        first.next = tempNext
+        pre = first
+        if first.next == None:
             break
         else:
-            pair1 = pair1.next
-            pair2 = pair1.next
-    return res.next
+            first = pair1.next
+            second = first.next
+    return sentry.next
 
 def swapPairs(self, head):
     """
@@ -33,8 +33,8 @@ def swapPairs(self, head):
     # time: O(n), space: O(n)
     if head == None or head.next == None:
         return head
-    pair1 = head
-    pair2 = head.next
-    pair1.next = self.swapPairs(pair2.next)
-    pair2.next = pair1
-    return pair2
+    first = head
+    second = head.next
+    first.next = self.swapPairs(second.next)
+    second.next = first
+    return second
